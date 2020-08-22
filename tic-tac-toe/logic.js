@@ -1,6 +1,7 @@
 
 var logo = "O";
 var array =[1,2,3,4,5,6,7,8,9];
+var wf = true;
 
 function clearall() {
     var b1 = document.getElementById("1");
@@ -35,6 +36,8 @@ function clearall() {
     document.getElementById("popup").style.visibility = "hidden";
     document.getElementById("overlay").style.visibility = "hidden";
     array =[1,2,3,4,5,6,7,8,9];
+    wf= true;
+    logo ="O";
 }
 
 function disall() {
@@ -62,13 +65,18 @@ function wins(player) {
       disall();
 
       popuptext = document.getElementById("text");
-        popuptext.innerHTML = player +" wins.";
-      
+      if(logo == "X"){
+        popuptext.innerHTML = "You wins.";
+      }
+      else{
+        popuptext.innerHTML = "Computer wins.";
+      }
 
       var pop = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
       pop.style.visibility = "visible";
       overlay.style.visibility ="visible"
+      wf = false;
 }
 
 
@@ -170,22 +178,23 @@ function random_item(items)
 }
 
 function xoo(button) {
-    for(var i = array.length - 1; i >= 0; i--) {
-      if(array[i] === button) {
-        array.splice(i, 1);
-      }
+  for(var i = array.length - 1; i >= 0; i--) {
+    if(array[i] === button) {
+      array.splice(i, 1);
     }
-    console.log(array);
-    if (logo=="X") {
+  }
+  if (logo=="X") {
     logo="O";
     set(button, logo);
     
-    }
-    else if (logo=="O") {
+  }
+  else if (logo=="O") {
     logo="X";
     set(button, logo);
-    var b = random_item(array);
-    console.log(b);
-    xoo(b);
+    if(wf){
+      var b = random_item(array);
+      console.log(b);
+      xoo(b);
     }
-    }
+  }
+}
