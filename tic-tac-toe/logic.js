@@ -63,9 +63,9 @@ function wins(player) {
 
       popuptext = document.getElementById("text");
       if (logo=="X") {
-      popuptext.innerHTML ="You wins.";
+      popuptext.innerHTML ="Computer wins.";
       } else{
-        popuptext.innerHTML ="Computer wins.";
+        popuptext.innerHTML ="You wins.";
       }
 
       var pop = document.getElementById("popup");
