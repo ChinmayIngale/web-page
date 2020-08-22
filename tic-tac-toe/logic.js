@@ -66,10 +66,10 @@ function wins(player) {
 
       popuptext = document.getElementById("text");
       if(logo == "X"){
-        popuptext.innerHTML = "You wins.";
+        popuptext.innerHTML = "You win.";
       }
       else{
-        popuptext.innerHTML = "Computer wins.";
+        popuptext.innerHTML = "Computer win.";
       }
 
       var pop = document.getElementById("popup");
