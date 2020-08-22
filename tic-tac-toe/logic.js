@@ -62,11 +62,8 @@ function wins(player) {
       disall();
 
       popuptext = document.getElementById("text");
-      if (logo=="X") {
-      popuptext.innerHTML ="Computer wins.";
-      } else{
-        popuptext.innerHTML ="You wins.";
-      }
+        popuptext.innerHTML = player +" wins.";
+      
 
       var pop = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
