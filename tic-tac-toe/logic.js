@@ -60,9 +60,13 @@ function disall() {
 
 function wins(player) {
       disall();
-    
+
       popuptext = document.getElementById("text");
-      popuptext.innerHTML = player + " wins.";
+      if (logo=="X") {
+      popuptext.innerHTML ="You wins.";
+      } else{
+        popuptext.innerHTML ="Computer wins.";
+      }
 
       var pop = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
